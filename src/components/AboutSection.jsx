@@ -104,7 +104,7 @@ function AboutSection() {
           </div>
 
           <a
-            href="/KuldipPatel_Resume.pdf"
+            href={`${import.meta.env.BASE_URL}KuldipPatel_Resume.pdf`}
             download
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 active:scale-95 transition"
           >
