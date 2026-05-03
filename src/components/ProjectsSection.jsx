@@ -8,38 +8,38 @@ const projects = [
     title: "Weather App 🌤️",
     desc: "Real-time weather application with location search and detailed forecast.",
     tech: ["React", "API", "CSS3"],
-    image: "/projects/weather.png",
-    link: "https://github.com/Kuldip-1101/Weather_App_MERN"
+    image: `${import.meta.env.BASE_URL}projects/weather.png`,
+    link: "https://github.com/Kuldip-1101/Weather_App_MERN",
   },
   {
     title: "Job Portal 💼",
     desc: "MERN stack job portal with authentication, job posting, and application system.",
     tech: ["React", "Node.js", "MongoDB"],
-    image: "/projects/job.png",
-    link: "https://github.com/Kuldip-1101/Job_Portal_MERN"
+    image: `${import.meta.env.BASE_URL}projects/job.png`,
+    link: "https://github.com/Kuldip-1101/Job_Portal_MERN",
   },
   {
     title: "E-commerce 🛒",
     desc: "Full-stack e-commerce website with cart, checkout and secure payments.",
     tech: ["React", "Node.js", "MongoDB"],
-    image: "/projects/ecommerce.png",
-    link: "https://github.com/Kuldip-1101/E-Commerce_WebApp_MERN"
+    image: `${import.meta.env.BASE_URL}projects/ecommerce.png`,
+    link: "https://github.com/Kuldip-1101/E-Commerce_WebApp_MERN",
   },
   {
     title: "Medicare Booking 🩺",
     desc: "Appointment booking platform for patients and doctors with secure authentication.",
     tech: ["React", "Node.js", "MongoDB"],
-    image: "/projects/medicare.png",
-    link: "https://github.com/Kuldip-1101/medicare-booking"
-  }
+    image: `${import.meta.env.BASE_URL}projects/medicare.png`,
+    link: "https://github.com/Kuldip-1101/medicare-booking",
+  },
 ];
 
 /* ================= ANIMATION ================= */
 const container = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.15 }
-  }
+    transition: { staggerChildren: 0.15 },
+  },
 };
 
 const cardAnim = {
@@ -47,8 +47,8 @@ const cardAnim = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 }
-  }
+    transition: { duration: 0.5 },
+  },
 };
 
 /* ================= BUTTON ================= */
@@ -70,23 +70,25 @@ function PremiumButton({ href, children, fullWidth = true }) {
       `}
     >
       {/* GLOW */}
-      <span className="
+      <span
+        className="
         absolute inset-0 opacity-0 group-hover:opacity-100
         blur-md transition duration-500
         bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400
-      "></span>
+      "
+      ></span>
 
       {/* SHINE */}
-      <span className="
+      <span
+        className="
         absolute inset-0 translate-x-[-120%]
         bg-gradient-to-r from-transparent via-white/40 to-transparent
         group-hover:translate-x-[120%]
         transition duration-700
-      "></span>
+      "
+      ></span>
 
-      <span className="relative z-10 flex items-center gap-2">
-        {children}
-      </span>
+      <span className="relative z-10 flex items-center gap-2">{children}</span>
     </a>
   );
 }
@@ -96,7 +98,6 @@ function ProjectsSection() {
   return (
     <section id="projects" className="px-6 py-20 bg-[#050816]">
       <div className="max-w-7xl mx-auto">
-
         {/* HEADER */}
         <div className="flex justify-between items-center mb-12 flex-wrap gap-4">
           <div>
@@ -140,7 +141,6 @@ function ProjectsSection() {
 
               {/* CARD */}
               <div className="relative h-full flex flex-col justify-between rounded-xl bg-[#0b0f1a] border border-white/10 overflow-hidden">
-
                 {/* TOP */}
                 <div>
                   <div className="overflow-hidden rounded-t-xl">
@@ -164,7 +164,6 @@ function ProjectsSection() {
 
                 {/* BOTTOM */}
                 <div className="p-5 pt-0">
-
                   {/* BADGES */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((t, idx) => (
@@ -181,14 +180,11 @@ function ProjectsSection() {
                   <PremiumButton href={project.link}>
                     <FaGithub /> View on GitHub
                   </PremiumButton>
-
                 </div>
-
               </div>
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
